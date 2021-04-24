@@ -1,0 +1,23 @@
+<mat-toolbar color="primary" class="navbar">
+    <div>
+        <span (click)="onProductsClick()" style="font-size: 35px;">ShopBridge</span>
+        <span (click)="onProductsClick()">Products</span>
+    </div>
+    <div>
+        <div (click)="oncartClick()" class="cart">
+            <div>
+                <mat-icon class="cart-icon">shopping_cart</mat-icon>
+            </div>
+            <div style="margin: 10px;">{{cartItemsList.length}}</div>
+        </div>
+    </div>
+</mat-toolbar>
+
+<app-products *ngIf="showProducts"
+    [productsDataList]="productsDataList"
+    (addItemToCart)="getCartItems($event)">
+</app-products>
+
+<app-cart *ngIf="showCart"
+    [cartItemsList]="cartItemsList">
+</app-cart>

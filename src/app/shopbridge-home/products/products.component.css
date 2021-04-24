@@ -1,0 +1,31 @@
+.data-card {
+    width: 20%;
+    display: inline-block;
+    margin: 20px;
+}
+
+h3 {
+    margin-top: 0px !important;
+}
+
+.center-align {
+    text-align: center;
+}
+
+.products {
+    padding: 32px;
+}
+
+.details {
+    margin: 8px 0px;
+    font-size: x-large;
+    font-weight: 500;
+    color: saddlebrown;
+}
+
+.btn {
+    width: 50%;
+    font-size: 17px;
+    background: #718feb;
+    color: white;
+}

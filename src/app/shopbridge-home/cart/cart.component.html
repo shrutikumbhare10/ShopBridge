@@ -1,0 +1,46 @@
+<div style="padding: 60px;">
+    <div *ngIf="cartItemsList.length == 0" class="empty-cart">
+        <div style="display: inline-flex;">
+            <div class="empty-cart-msg">Your ShopBridge cart is empty!</div>
+            <div>
+                <mat-icon class="empty-cart-icon">production_quantity_limits</mat-icon>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="cartItemsList.length != 0">
+        <table mat-table [dataSource]="cartItemsList" class="mat-elevatio-z6" style="margin-top: 8px;">
+
+            <ng-container matColumnDef="item">
+                <th mat-header-cell *matHeaderCellDef class="cart-header">Shopping Cart</th>
+                <td mat-cell *matCellDef="let element">
+                    <div fxFlex fxLayout="row" fxLayoutGap="0px">
+                        <div [fxFlex]="21">
+                            <img mat-card-image src="{{element.thumbnailUrl}}" alt="{{element.thumbnailUrl}}"
+                                class="image">
+                        </div>
+                        <div [fxFlex]="67">
+                            <div class="title">{{element.itemName}}</div>
+                            <div class="quantity">
+                                <div>Qty: &nbsp;&nbsp;</div>
+                                <mat-select>
+                                    <mat-option *ngFor="let num of quanityList" [value]="num" selected="{{element.quantity}}">{{num}}</mat-option>
+                                </mat-select>
+                            </div>
+                            <div class="delete-item" (click)="onRemoveItemClick(element.id)">
+                                <div>Delete &nbsp;</div>
+                                <div>
+                                    <mat-icon class="delete">delete</mat-icon>
+                                </div>
+                            </div>
+                        </div>
+                        <div [fxFlex]="8" class="price">{{element.itemPrice | currency:"&#8377;"}}</div>
+                    </div>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="cartTableColumns"></tr>
+            <tr mat-row *matRowDef="let row, columns: cartTableColumns"></tr>
+        </table>
+    </div>
+</div>

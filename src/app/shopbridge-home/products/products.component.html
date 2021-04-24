@@ -1,0 +1,16 @@
+<div class="products">
+    <span *ngFor="let product of productsDataList">
+        <mat-card class="data-card">
+            <img mat-card-image src="{{product.thumbnailUrl}}" alt="{{product.thumbnailUrl}}" style="height: 180px;">
+            <mat-card-content>
+                <div style="margin: 5px;">
+                    <div class="details">{{product.itemName}}</div>
+                    <a href="{{product.url}}">{{product.url}}</a>
+                </div>
+            </mat-card-content>
+            <mat-card-actions style="margin: 5px;">
+                <button mat-raised-button class="btn" (click)="onAddToCartClick(product)">Add To Cart</button>
+            </mat-card-actions>
+        </mat-card>
+    </span>
+</div>

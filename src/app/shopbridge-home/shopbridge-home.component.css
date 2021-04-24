@@ -1,0 +1,26 @@
+mat-toolbar {
+    background-color: red;
+}
+
+.navbar {
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+span {
+    padding-right: 1rem;
+    cursor: pointer;
+}
+
+.cart {
+    padding-right: 1rem;
+    cursor: pointer;
+    display: inline-flex;
+}
+
+.cart-icon {
+    font-size: 40px;
+    margin: 5px;
+}
